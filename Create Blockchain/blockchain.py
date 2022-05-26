@@ -14,3 +14,15 @@ class Blockchain:
         self.chain = []
         #genesis block (first block)
         self.create_block(proof = 1, previous_hash = "0")
+        
+    def create_block(self, proof, previous_hash):
+        block = {"index": len(self.chain) + 1,
+                 "timestamp": str(datetime.datetime.now()),
+                 "proof": proof,
+                 "previous_hash": previous_hash}
+        self.chain.append(block)
+        return block
+    
+    
+
+# Part 2 - Mining our Blockchain
